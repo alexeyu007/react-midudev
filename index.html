@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+
+    <style>
+        img.disabled{
+            opacity: 0.3;
+        }
+    </style>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>Womens in tech</h1>
+    <div id="app">
+        <script type= "text/babel">
+             
+
+            const app= document.getElementById("app");
+
+            //const h = React.createElement;
+
+            const Avatar = params => {
+                const src =`https://randomuser.me/api/portraits/women/${params.id}.jpg`;
+
+                //return h('img',{ src });
+                return <img src ={ src } />;
+            };
+
+            /*     ReactDOM.render(h(Avatar, { id: 9 }), app);
+            ReactDOM.render(h(Avatar, { id: 10 }), app); */
+            ReactDOM.render( 
+                //h("div", null , [h(Avatar, { id:9 } ),h(Avatar, { id: 8 })]), app
+                //h(Avatar,{ id : 80 }),app
+                <div>
+                    <Avatar id = {10} /> 
+                    <Avatar id = {20} />      
+                </div>, app
+            );
+
+            // const Avatar = params => {
+            //     const src = `https://randomuser.me/api/portraits/women/${params.id}.jpg`;
+                
+            //     return `<picture>
+            //         <img src="${src}"/>
+            //                     <h3>${params.name}</h3>
+            //                     </picture>`
+            // };
+            // app.innerHTML += Avatar({id: 5,name: 'Andrea'});
+            // app.innerHTML += Avatar({id: 15,name: 'Marion'});    
+            
+            // app.querySelectorAll('img').forEach( img => {
+            //     img.addEventListener('click',()=> {
+            //         img.classList.toggle('disabled')
+            //     })
+            // })
+        </script> 
+
+    </div>
+</body>
+
+</html>
